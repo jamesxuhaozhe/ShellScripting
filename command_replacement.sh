@@ -25,3 +25,10 @@ echo "This year have passed $(($(date +%j)/7)) weeks"
 
 echo "There is $((365 - $(date +%j))) days before new year"
 echo "There is$(((365 -  $(date +%j))/7)) weeks before new year" 
+
+# see if the nginx process exists or not, if not then start one
+
+nginx_process_num=$(ps -ef | grep nginx | grep -v grep | wc -l)
+if [ $nginix_process_num -eq 0 ];then
+	systemctl start nginx
+fi
