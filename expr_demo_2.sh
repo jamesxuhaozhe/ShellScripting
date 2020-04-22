@@ -1,15 +1,23 @@
 #!/bin/bash
 #
 
-read -p "Please Enter a number so we can tell if it is positive integer: " number
+while true; do
+  read -p "Pls enter a positive integer(num>0): " num
 
-expr $number + 1 &> /dev/null
-
-if [ $? -eq 0 ];then
-  if [ `expr $number \> 0` -eq 1 ];then
-    echo "YES!"
+  expr $num + 1 &>/dev/null
+  if [ $? -ne 0 ]; then
+    echo "Error,You must input a interger"
+    continue
   else
-    echo "NO! Exiting"
-    exit
+    if [ $(expr $num \> 0) -ne 1 ]; then
+      echo "Error,You must input a postive interger"
+      continue
+    else
+      sum=0
+      for ((i = 0; i <= $num; i++)); do
+        sum=$(expr $sum + $i)
+      done
+      echo "1+2+3+4+5+...+$num=$sum"
+    fi
   fi
-fi
+done
