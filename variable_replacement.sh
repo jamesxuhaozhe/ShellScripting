@@ -19,7 +19,6 @@ var4=${variable_1%ov*}
 
 echo $var4
 
-
 ##replace the first string with new string
 
 var5=${variable_1/v/V}
@@ -30,4 +29,4 @@ echo $var5
 
 var6=${variable_1//v/V}
 
-echo $var6 
+echo $var6
