@@ -17,3 +17,14 @@ declare -i num3
 num3=$num1+90
 
 echo $num3
+
+# declare an array
+declare -a array
+array=("jone" "mike" "kobe" "James")
+
+# print array content
+# shellcheck disable=SC2068
+echo ${array[@]}
+
+# print the first element of the array
+echo ${array[0]}
