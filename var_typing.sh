@@ -28,3 +28,8 @@ echo ${array[@]}
 
 # print the first element of the array
 echo ${array[0]}
+
+# declare a environment variable
+
+declare -x num1
+
