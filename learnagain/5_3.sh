@@ -24,3 +24,5 @@ echo $subtract_4
 
 subtract_5=${var1: (5)}
 echo $subtract_5
+
+#使用expr的时候，索引计数是从1开始计算的，使用 ${string:position}，索引计数是从0开始的。
