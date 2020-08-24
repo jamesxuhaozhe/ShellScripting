@@ -8,3 +8,10 @@ do
     echo "This is $index user: $user"
     (( index++ ))
 done
+
+
+# output this year and next year
+
+echo "This is $(date +%Y) year"
+
+echo "Next year is $(($(date +%Y) + 1)) year"
