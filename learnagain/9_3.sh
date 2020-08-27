@@ -13,7 +13,7 @@ sed -n '5,+3p' /etc/passwd
 sed -n '/root/p' /etc/passwd
 
 # 打印包含 /sbin/nologin 的行，/ 需要转义
-sed -n '/\/sbin\/nologin/p' /etc/passwd
+sed  -n '/\/sbin\/nologin/p' /etc/passwd
 
 # 打印开头为root的行
 sed -n '/^root/p' /etc/passwd
