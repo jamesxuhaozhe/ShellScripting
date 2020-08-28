@@ -21,3 +21,24 @@ sed -n '/^root/p' /etc/passwd
 # /pattern1/,/pattern2/ 从pattern1的行，匹配到pattern2的行, 例子，从开头是root的行，匹配到开头是nginx的行
 sed -n '/^root/,/^nginx/p' /etc/passwd
 
+# 把file中的第一行删掉，因为有-i在，所以是直接操作源文件
+sed -i '1d' file
+
+# 把file中 得有 /sbin/nologin 的行都删掉
+sed -i '/\/sbin\/nologin/d' file
+
+# 把file这个文件中，开头是mail的行和开头是ftp行，都删掉
+sed -i '/^mail/,/^ftp/d' file
+
+# 在含有 /bin/bash 字眼的行后面的一行中添加 This is a usr who can login
+sed -i '/\/bin\/bash/a This is a user who can login' file
+
+# 在file中， 开头是hdfs， 和开头是http的行中间的每一行前一行，都追加AAAAAA
+sed -i '/^hdfs/,/^http/i AAAAAA' file
+
+# 在file2中，只要该行包含 root，就在该行下追加file1的内容
+sed -i '/root/r file1' file2
+
+# 把file.bin文件中的包含 /bin/bash 的行都写到 file.txt文件中去
+sed -n '/\/bin\/bash/w /tmp/file.txt' file.bin
+
