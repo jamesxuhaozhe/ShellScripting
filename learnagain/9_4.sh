@@ -9,4 +9,6 @@
 # s/old/new/g 将行内所有的old替换成g
 # s/old/new/2g 将行内前两个old替换成g
 # s/old/new/ig 将行内所有old替换成new，忽略大小写
+# = 显示行号
 
+# 反向引用，&

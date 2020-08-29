@@ -42,3 +42,8 @@ sed -i '/root/r file1' file2
 # 把file.bin文件中的包含 /bin/bash 的行都写到 file.txt文件中去
 sed -n '/\/bin\/bash/w /tmp/file.txt' file.bin
 
+# 把file文件中 含有/bin/bash的行号输出
+sed -n '/\/bin\/bash/=' file
+
+# 反向引用的例子 &,把 sed.txt 文件中可以用Had..p匹配出来的字符串，后面都加上s，&s就是反向引用
+sed -n 's/Had..p/&s/g' sed.txt
